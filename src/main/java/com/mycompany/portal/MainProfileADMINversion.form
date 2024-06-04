@@ -63,7 +63,7 @@
             </Constraint>
           </Constraints>
         </Component>
-        <Container class="LoginAndSignup.CurvedPanel" name="curvedPanel1">
+        <Container class="topglobalnakaw.CurvedPanel" name="curvedPanel1">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="d0" green="d4" red="de" type="rgb"/>
@@ -94,7 +94,7 @@
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Container class="LoginAndSignup.CurvedPanel" name="curvedPanel2">
+            <Container class="topglobalnakaw.CurvedPanel" name="curvedPanel2">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ed" green="f2" red="f3" type="rgb"/>
@@ -381,7 +381,7 @@
             </Container>
           </SubComponents>
         </Container>
-        <Container class="LoginAndSignup.CurvedPanel" name="curvedPanel3">
+        <Container class="topglobalnakaw.CurvedPanel" name="curvedPanel3">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="d0" green="d4" red="dd" type="rgb"/>
@@ -409,7 +409,7 @@
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Container class="LoginAndSignup.CurvedPanel" name="curvedPanel4">
+            <Container class="topglobalnakaw.CurvedPanel" name="curvedPanel4">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ed" green="f2" red="f3" type="rgb"/>
@@ -709,7 +709,7 @@
             </Container>
           </SubComponents>
         </Container>
-        <Container class="LoginAndSignup.CurvedPanel" name="curvedPanel5">
+        <Container class="topglobalnakaw.CurvedPanel" name="curvedPanel5">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="d0" green="d4" red="dd" type="rgb"/>
@@ -740,7 +740,7 @@
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Container class="LoginAndSignup.CurvedPanel" name="curvedPanel6">
+            <Container class="topglobalnakaw.CurvedPanel" name="curvedPanel6">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ed" green="f2" red="f3" type="rgb"/>

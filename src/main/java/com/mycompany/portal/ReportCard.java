@@ -94,8 +94,8 @@ public class ReportCard extends javax.swing.JInternalFrame {
         jLabel12 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
-        curvedPanel1 = new LoginAndSignup.CurvedPanel();
-        curvedPanel2 = new LoginAndSignup.CurvedPanel();
+        curvedPanel1 = new topglobalnakaw.CurvedPanel();
+        curvedPanel2 = new topglobalnakaw.CurvedPanel();
         jLabel1 = new javax.swing.JLabel();
         SubjectField = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
@@ -557,8 +557,8 @@ public class ReportCard extends javax.swing.JInternalFrame {
     private javax.swing.JTextField PapaMo;
     private javax.swing.JTextField SubjectField;
     private javax.swing.JButton btndelete;
-    private LoginAndSignup.CurvedPanel curvedPanel1;
-    private LoginAndSignup.CurvedPanel curvedPanel2;
+    private topglobalnakaw.CurvedPanel curvedPanel1;
+    private topglobalnakaw.CurvedPanel curvedPanel2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;

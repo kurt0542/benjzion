@@ -52,8 +52,8 @@ public class MainProfileADMINversion extends javax.swing.JInternalFrame {
 
         jPanel2 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
-        curvedPanel1 = new LoginAndSignup.CurvedPanel();
-        curvedPanel2 = new LoginAndSignup.CurvedPanel();
+        curvedPanel1 = new topglobalnakaw.CurvedPanel();
+        curvedPanel2 = new topglobalnakaw.CurvedPanel();
         jSeparator1 = new javax.swing.JSeparator();
         StudentNumber = new javax.swing.JLabel();
         RatingText = new javax.swing.JLabel();
@@ -68,8 +68,8 @@ public class MainProfileADMINversion extends javax.swing.JInternalFrame {
         StrandAdd1 = new topglobalnakaw.LoginCustomTextField();
         GradeAdd1 = new topglobalnakaw.LoginCustomTextField();
         SectionAdd1 = new topglobalnakaw.LoginCustomTextField();
-        curvedPanel3 = new LoginAndSignup.CurvedPanel();
-        curvedPanel4 = new LoginAndSignup.CurvedPanel();
+        curvedPanel3 = new topglobalnakaw.CurvedPanel();
+        curvedPanel4 = new topglobalnakaw.CurvedPanel();
         jSeparator2 = new javax.swing.JSeparator();
         MobileNumberTextHolder = new javax.swing.JLabel();
         EmailTextHolder = new javax.swing.JLabel();
@@ -85,8 +85,8 @@ public class MainProfileADMINversion extends javax.swing.JInternalFrame {
         GuardianMnumberAdd1 = new topglobalnakaw.LoginCustomTextField();
         guardianFBadd1 = new topglobalnakaw.LoginCustomTextField();
         guardianEMAILadd1 = new topglobalnakaw.LoginCustomTextField();
-        curvedPanel5 = new LoginAndSignup.CurvedPanel();
-        curvedPanel6 = new LoginAndSignup.CurvedPanel();
+        curvedPanel5 = new topglobalnakaw.CurvedPanel();
+        curvedPanel6 = new topglobalnakaw.CurvedPanel();
         jSeparator4 = new javax.swing.JSeparator();
         jLabel6 = new javax.swing.JLabel();
         StudentFormerSectionsActual = new javax.swing.JLabel();
@@ -683,12 +683,12 @@ public class MainProfileADMINversion extends javax.swing.JInternalFrame {
     private javax.swing.JLabel StrandText1;
     private javax.swing.JLabel StudentFormerSectionsActual;
     private javax.swing.JLabel StudentNumber;
-    private LoginAndSignup.CurvedPanel curvedPanel1;
-    private LoginAndSignup.CurvedPanel curvedPanel2;
-    private LoginAndSignup.CurvedPanel curvedPanel3;
-    private LoginAndSignup.CurvedPanel curvedPanel4;
-    private LoginAndSignup.CurvedPanel curvedPanel5;
-    private LoginAndSignup.CurvedPanel curvedPanel6;
+    private topglobalnakaw.CurvedPanel curvedPanel1;
+    private topglobalnakaw.CurvedPanel curvedPanel2;
+    private topglobalnakaw.CurvedPanel curvedPanel3;
+    private topglobalnakaw.CurvedPanel curvedPanel4;
+    private topglobalnakaw.CurvedPanel curvedPanel5;
+    private topglobalnakaw.CurvedPanel curvedPanel6;
     private topglobalnakaw.LoginCustomTextField guardianEMAILadd1;
     private topglobalnakaw.LoginCustomTextField guardianFBadd1;
     private javax.swing.JComboBox<String> jComboBox1;

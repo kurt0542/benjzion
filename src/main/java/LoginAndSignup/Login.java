@@ -4,11 +4,13 @@
  */
 package LoginAndSignup;
 
+import com.mycompany.portal.DBconnection;
 import com.mycompany.portal.Mainpage;
 import java.awt.HeadlessException;
 import java.awt.event.KeyEvent;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -20,14 +22,21 @@ import java.util.logging.Logger;
  *
  * @author admin
  */
-public class Login extends javax.swing.JFrame {
 
+    
+public class Login extends javax.swing.JFrame {
+    
+    Connection ConnectDB;
+    PreparedStatement pst;
+    Statement st;
+    ResultSet rs;
     /**
      * Creates new form Login
      */
     public Login() {
            
         initComponents();
+        ConnectDB = DBconnection.Conn();
     }
     String LoginStudentID;
     /**
@@ -41,11 +50,8 @@ public class Login extends javax.swing.JFrame {
         String StudentID = StudentNumberField.getText();
         String UserPass = String.valueOf(PasswordField.getPassword());
           LoginStudentID = StudentID;
-            Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
-            String path = "C:\\Users\\avery\\OneDrive\\Documents\\NetBeansProjects\\Portal\\DatabaseNiBFF.accdb";
-            String url = "jdbc:ucanaccess://" + path;  
-            Connection connect = DriverManager.getConnection(url);
-            Statement st = connect.createStatement();
+            
+             st = ConnectDB.createStatement();
             
             String query = "SELECT * FROM LoginInfo WHERE StudentID= '"+StudentID+"'";
             String query2 = "UPDATE recentlogininfo SET recentID ='"+StudentID+"' WHERE ID = 1";
@@ -57,7 +63,7 @@ public class Login extends javax.swing.JFrame {
             }
             if(Found == 1 && UserPass.equals(passDb)){
                 this.dispose();
-                TimeUnit.SECONDS.sleep(1) ;
+                Thread.sleep(1000) ;
                 Mainpage welcomepage = new Mainpage();
                 welcomepage.setVisible(true);
                 st.executeUpdate(query2);
@@ -67,7 +73,7 @@ public class Login extends javax.swing.JFrame {
             }
             
       }
-      catch(HeadlessException | ClassNotFoundException | SQLException e){
+      catch(HeadlessException | SQLException e){
           System.out.print(e);
       } catch (InterruptedException ex) {
             Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
@@ -79,12 +85,12 @@ public class Login extends javax.swing.JFrame {
 
         BackgroundOnly7 = new javax.swing.JLabel();
         Login = new javax.swing.JPanel();
-        curvedPanel1 = new LoginAndSignup.CurvedPanel();
+        curvedPanel1 = new topglobalnakaw.CurvedPanel();
         StudentNumberField = new javax.swing.JTextField();
         PasswordField = new javax.swing.JPasswordField();
-        curvedPanel2 = new LoginAndSignup.CurvedPanel();
+        curvedPanel2 = new topglobalnakaw.CurvedPanel();
         Loginbtn = new javax.swing.JLabel();
-        curvedPanel3 = new LoginAndSignup.CurvedPanel();
+        curvedPanel3 = new topglobalnakaw.CurvedPanel();
         jLabel3 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -382,9 +388,9 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JLabel Loginbtn;
     private javax.swing.JPasswordField PasswordField;
     private javax.swing.JTextField StudentNumberField;
-    private LoginAndSignup.CurvedPanel curvedPanel1;
-    private LoginAndSignup.CurvedPanel curvedPanel2;
-    private LoginAndSignup.CurvedPanel curvedPanel3;
+    private topglobalnakaw.CurvedPanel curvedPanel1;
+    private topglobalnakaw.CurvedPanel curvedPanel2;
+    private topglobalnakaw.CurvedPanel curvedPanel3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
