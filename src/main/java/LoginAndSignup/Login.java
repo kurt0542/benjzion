@@ -4,8 +4,10 @@
  */
 package LoginAndSignup;
 
+import com.mycompany.portal.AdminPage;
 import com.mycompany.portal.DBconnection;
 import com.mycompany.portal.Mainpage;
+import com.mycompany.portal.adminTEST;
 import java.awt.HeadlessException;
 import java.awt.event.KeyEvent;
 import java.sql.Connection;
@@ -17,6 +19,7 @@ import java.sql.Statement;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -46,31 +49,60 @@ public class Login extends javax.swing.JFrame {
      */ 
    public void Login(){
        try{ 
-             String passDb = null;
-        String StudentID = StudentNumberField.getText();
-        String UserPass = String.valueOf(PasswordField.getPassword());
-          LoginStudentID = StudentID;
+            String passDb = null;
+            String StudentID = StudentNumberField.getText();
+            String UserPass = String.valueOf(PasswordField.getPassword());
+            LoginStudentID = StudentID;
             
              st = ConnectDB.createStatement();
             
-            String query = "SELECT * FROM LoginInfo WHERE StudentID= '"+StudentID+"'";
+//            String query = "SELECT * FROM LoginInfo WHERE StudentID= '"+StudentID+"'";
+            String query = "SELECT * FROM Logininfo WHERE StudentID = ? AND User_Password = ?";
             String query2 = "UPDATE recentlogininfo SET recentID ='"+StudentID+"' WHERE ID = 1";
-            ResultSet rs = st.executeQuery(query);
+            pst = ConnectDB.prepareStatement(query);
+            pst.setString(1, StudentID);
+            pst.setString(2, UserPass);
+            rs = pst.executeQuery();
             int Found = 0;
-            while(rs.next()){
-                passDb = rs.getString("User_Password");
-                Found = 1;
-            }
-            if(Found == 1 && UserPass.equals(passDb)){
+            
+            if(rs.next()) {
                 this.dispose();
-                Thread.sleep(1000) ;
+                Thread.sleep(1000);
                 Mainpage welcomepage = new Mainpage();
                 welcomepage.setVisible(true);
                 st.executeUpdate(query2);
-            }else{
-                StudentNumberField.setText("");
-                PasswordField.setText("");
             }
+            else {
+                String adminQuery = "SELECT * FROM Admin_Login_Info where Admin_Username = ? AND Admin_Password = ?";
+                pst = ConnectDB.prepareStatement(adminQuery);
+                pst.setString(1, StudentID);
+                pst.setString(2, UserPass);
+                rs = pst.executeQuery();
+                if (rs.next()) {
+                    JOptionPane.showMessageDialog(null, "Admin Login Successful.");
+                    adminTEST newAdminPage = new adminTEST();
+                    newAdminPage.setVisible(true);
+                    this.dispose();
+                } else {
+                    StudentNumberField.setText("");
+                    PasswordField.setText("");
+                }
+                
+            }
+//            while(rs.next()){
+//                passDb = rs.getString("User_Password");
+//                Found = 1;
+//            }
+//            if(Found == 1 && UserPass.equals(passDb)){
+//                this.dispose();
+//                Thread.sleep(1000);
+//                Mainpage welcomepage = new Mainpage();
+//                welcomepage.setVisible(true);
+//                st.executeUpdate(query2);
+//            }else{
+//                StudentNumberField.setText("");
+//                PasswordField.setText("");
+//            }
             
       }
       catch(HeadlessException | SQLException e){
@@ -160,14 +192,16 @@ public class Login extends javax.swing.JFrame {
         curvedPanel2.setLayout(curvedPanel2Layout);
         curvedPanel2Layout.setHorizontalGroup(
             curvedPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(curvedPanel2Layout.createSequentialGroup()
-                .addContainerGap()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, curvedPanel2Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(Loginbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
         curvedPanel2Layout.setVerticalGroup(
             curvedPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Loginbtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, curvedPanel2Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(Loginbtn))
         );
 
         curvedPanel3.setBackground(new java.awt.Color(187, 226, 246));

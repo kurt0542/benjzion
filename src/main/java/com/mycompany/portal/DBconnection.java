@@ -16,9 +16,13 @@ public class DBconnection {
     
      public static Connection Conn() {
         try {
+//            Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
+//            String path = "C:\\Users\\STUDENT\\OneDrive\\Documents\\NetBeansProjects\\portal-ni-benhamin\\db\\DatabaseNiBFF.accdb";
+//            String url = "jdbc:ucanaccess://" + path;  
+//            Connection conn = DriverManager.getConnection(url);
+//            return conn;
             Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
-            String path = "C:\\Users\\STUDENT\\OneDrive\\Documents\\NetBeansProjects\\portal-ni-benhamin\\db\\DatabaseNiBFF.accdb";
-            String url = "jdbc:ucanaccess://" + path;  
+            String url = "jdbc:ucanaccess://src/main/resources/database/PortalDB.accdb";
             Connection conn = DriverManager.getConnection(url);
             return conn;
         } catch (Exception e) {

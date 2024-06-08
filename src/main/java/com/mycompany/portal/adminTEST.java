@@ -4,6 +4,10 @@
  */
 package com.mycompany.portal;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.Statement;
 import static javax.swing.text.StyleConstants.Background;
 
 /**
@@ -11,12 +15,15 @@ import static javax.swing.text.StyleConstants.Background;
  * @author avery
  */
 public class adminTEST extends javax.swing.JFrame {
-
-    /**
-     * Creates new form adminTEST
-     */
+    
+    Connection ConnectDB;
+    PreparedStatement pst;
+    Statement st;
+    ResultSet rs;
+    
     public adminTEST() {
         initComponents();
+        ConnectDB = DBconnection.Conn();
     }
 
     /**
@@ -29,10 +36,16 @@ public class adminTEST extends javax.swing.JFrame {
     private void initComponents() {
 
         mainProfileADMINversion1 = new com.mycompany.portal.MainProfileADMINversion();
+        mainProfileADMINversion3 = new com.mycompany.portal.MainProfileADMINversion();
+        mainProfileADMINversion2 = new com.mycompany.portal.MainProfileADMINversion();
+
+        mainProfileADMINversion1.setVisible(true);
+
+        mainProfileADMINversion3.setVisible(true);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        mainProfileADMINversion1.setVisible(true);
+        mainProfileADMINversion2.setVisible(true);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -40,14 +53,14 @@ public class adminTEST extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(mainProfileADMINversion1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(mainProfileADMINversion2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(mainProfileADMINversion1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(mainProfileADMINversion2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -91,5 +104,7 @@ public class adminTEST extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private com.mycompany.portal.MainProfileADMINversion mainProfileADMINversion1;
+    private com.mycompany.portal.MainProfileADMINversion mainProfileADMINversion2;
+    private com.mycompany.portal.MainProfileADMINversion mainProfileADMINversion3;
     // End of variables declaration//GEN-END:variables
 }
